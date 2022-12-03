@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+#include <climits>
+
+int main()
+{
+
+    
+    int n;
+    cin >> n;
+
+    int secondLargest = INT_MIN;
+
+    int largest;
+    cin >> largest;
+
+    int current;
+    int i = 2;
+    while (i <= n)
+    {
+        cin >> current;
+
+        if (current >= largest)
+        {
+            if (current != largest)
+            {
+                secondLargest = largest;
+                largest = current;
+            }
+        }
+        else if (current > secondLargest)
+        {
+
+            secondLargest = current;
+        }
+
+        i++;
+    }
+
+    cout << secondLargest;
+}
