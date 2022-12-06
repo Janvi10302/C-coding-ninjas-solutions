@@ -1,0 +1,17 @@
+#include <cstring>
+#include <iostream>
+
+using namespace std;
+
+// #include "solution.h"
+
+void removeConsecutiveDuplicates(char input[]) {
+  // Write your code here
+  int lastIndex = 0;
+  for (int i = 1; input[i] != '\0'; i++) {
+    if (input[lastIndex] != input[i]) {
+      input[++lastIndex] = input[i];
+    }
+  }
+  input[lastIndex + 1] = '\0';
+}
