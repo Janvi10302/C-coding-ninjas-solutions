@@ -1,0 +1,14 @@
+#include <iomanip>
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+double geometricSum(int k) {
+  // Write your code here
+  if (k == 0) {
+    return 1;
+  } else {
+    double n = 1 / (pow(2, k));
+    return n + geometricSum(k - 1);
+  }
+}
