@@ -1,0 +1,11 @@
+#include <algorithm>
+int maximumProfit(int budget[], int n) {
+  // Write your code here
+  sort(budget, budget + n);
+  int max_profit = budget[0] * n;
+  for (int i = 1; i < n; i++) {
+    if (budget[i] * (n - i) > max_profit)
+      max_profit = budget[i] * (n - i);
+  }
+  return max_profit;
+}
